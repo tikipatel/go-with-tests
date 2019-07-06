@@ -1,6 +1,10 @@
 package sum
 
 // Returns the sum of all elements in array.
-func Sum(numbers [5]int) int {
-	return 15
+func Sum(numbers []int) int {
+	var sum int
+	for _, number := range numbers {
+		sum += number
+	}
+	return sum
 }
