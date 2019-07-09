@@ -21,6 +21,20 @@ func TestSearch(t *testing.T) {
 	})
 }
 
+func TestDictionaryAdd(t *testing.T) {
+	definition := "this is just a test"
+	dictionary := Dictionary{}
+	dictionary.Add("test", definition)
+
+	got, err := dictionary.Search("test")
+	want := definition
+
+	if err != nil {
+		t.Fatal("should find added word:", err)
+	}
+	assetStrings(t, got, want)
+}
+
 func assetStrings(t *testing.T, got, want string) {
 	t.Helper()
 	if got != want {
