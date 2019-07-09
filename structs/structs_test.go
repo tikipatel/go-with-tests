@@ -12,14 +12,16 @@ func TestPerimeter(t *testing.T) {
 	}
 
 	t.Run("Perimeter of rect with height and width of 10 should be 40", func(t *testing.T) {
-		got := Perimeter(10.0, 10.0)
+		rectangle := Rectangle{10.0, 10.0}
+		got := Perimeter(rectangle)
 		want := 40.0
 
 		assertCorrectPerimeter(t, got, want)
 	})
 
 	t.Run("Perimeter of rect with height 10 and width of 20 should be 40", func(t *testing.T) {
-		got := Perimeter(20.0, 10.0)
+		rectangle := Rectangle{20, 10}
+		got := Perimeter(rectangle)
 		want := 60.0
 
 		assertCorrectPerimeter(t, got, want)
