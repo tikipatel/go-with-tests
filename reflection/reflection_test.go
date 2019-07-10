@@ -73,6 +73,13 @@ func TestWalkExtended(t *testing.T) {
 				{42, "Reykjavík"},
 			},
 			[]string{"London", "Reykjavík"},
+		}, {
+			"Map",
+			map[string]string{
+				"Foo":  "Bar",
+				"Bazz": "Buzz",
+			},
+			[]string{"Bar", "Buzz"},
 		},
 	}
 
