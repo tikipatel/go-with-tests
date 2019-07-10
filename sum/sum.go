@@ -9,8 +9,8 @@ func Sum(numbers []int) int {
 	return sum
 }
 
-// SumAll returns the sum of all elements in an array
-func SumAll(numbersToSum ...[]int) []int {
+// All returns the sum of all elements in an array
+func All(numbersToSum ...[]int) []int {
 	lengthOfNumbers := len(numbersToSum)
 	sums := make([]int, lengthOfNumbers)
 

@@ -53,7 +53,7 @@ func TestSumAll(t *testing.T) {
 	}
 
 	t.Run("{1,2} and {3,6} should return {3,9}", func(t *testing.T) {
-		got := SumAll([]int{1, 2}, []int{3, 6})
+		got := All([]int{1, 2}, []int{3, 6})
 		want := []int{3, 9}
 
 		assertCorrectArray(t, got, want)

@@ -7,7 +7,7 @@ func TestPerimeter(t *testing.T) {
 	assertCorrectPerimeter := func(t *testing.T, actual, expected float64) {
 		t.Helper()
 		if actual != expected {
-			t.Errorf("Expected %d got %d", expected, actual)
+			t.Errorf("Expected %f got %f", expected, actual)
 		}
 	}
 
@@ -32,7 +32,7 @@ func TestArea(t *testing.T) {
 	assertCorrectArea := func(t *testing.T, actual, expected float64) {
 		t.Helper()
 		if actual != expected {
-			t.Errorf("Expected %d got %d", expected, actual)
+			t.Errorf("Expected %f got %f", expected, actual)
 		}
 	}
 
