@@ -60,7 +60,7 @@ func (s *CountdownOperationsSpy) Sleep() {
 	s.Calls = append(s.Calls, sleep)
 }
 
-// Write implementation for `CountdownOperationsSpy`'s conformance to something i don't know yet
+// Write implementation for `CountdownOperationsSpy`'s conformance to `io.Writer` interface
 func (s *CountdownOperationsSpy) Write(p []byte) (n int, err error) {
 	s.Calls = append(s.Calls, write)
 	return
