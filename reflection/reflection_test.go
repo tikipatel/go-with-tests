@@ -34,7 +34,7 @@ func TestWalkExtended(t *testing.T) {
 	}{
 		{
 			"Nested fields",
-			Person{
+			&Person{
 				"Chris",
 				Profile{33, "London"},
 			},
