@@ -33,12 +33,12 @@ func TestWalkExtended(t *testing.T) {
 		ExpectedCalls []string
 	}{
 		{
-			"Struct with one string field",
-			struct {
-				Name string
-				Age  int
-			}{"Chris", 33},
-			[]string{"Chris"},
+			"Nested fields",
+			Person{
+				"Chris",
+				Profile{33, "London"},
+			},
+			[]string{"Chris", "London"},
 		},
 	}
 
