@@ -65,3 +65,24 @@ func (s *CountdownOperationsSpy) Write(p []byte) (n int, err error) {
 	s.Calls = append(s.Calls, write)
 	return
 }
+
+// ConfigurableSleeper struct
+type ConfigurableSleeper struct {
+	duration time.Duration
+	sleep    func(time.Duration)
+}
+
+// SpyTime struct
+type SpyTime struct {
+	durationSlept time.Duration
+}
+
+// Sleep is a function
+func (s *SpyTime) Sleep(duration time.Duration) {
+	s.durationSlept = duration
+}
+
+// Sleep implmentation for `ConfigurableSleeper` for conformance to `Sleeper`
+func (c *ConfigurableSleeper) Sleep() {
+	c.sleep(c.duration)
+}
