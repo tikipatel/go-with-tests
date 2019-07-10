@@ -33,7 +33,7 @@ func TestWalkExtended(t *testing.T) {
 		ExpectedCalls []string
 	}{
 		{
-			"Nested fields",
+			"Pointers to things",
 			&Person{
 				"Chris",
 				Profile{33, "London"},
@@ -60,36 +60,6 @@ func TestWalkExtended(t *testing.T) {
 			}{33, "London"}},
 			[]string{"Chris", "London"},
 		}, {
-			"Slices",
-			[]Profile{
-				{33, "London"},
-				{25, "Reykjavík"},
-			},
-			[]string{"London", "Reykjavík"},
-		},
-	}
-
-	for _, test := range cases {
-		t.Run(test.Name, func(t *testing.T) {
-			var got []string
-			walk(test.Input, func(input string) {
-				got = append(got, input)
-			})
-
-			if !reflect.DeepEqual(got, test.ExpectedCalls) {
-				t.Errorf("got %v, want %v", got, test.ExpectedCalls)
-			}
-		})
-	}
-}
-
-func TestWalkSlices(t *testing.T) {
-	cases := []struct {
-		Name          string
-		Input         interface{}
-		ExpectedCalls []string
-	}{
-		{
 			"Slices",
 			[]Profile{
 				{33, "London"},
