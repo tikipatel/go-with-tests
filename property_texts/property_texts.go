@@ -38,3 +38,9 @@ func ConvertToRoman(arabic int) string {
 
 	return result.String()
 }
+
+// ConvertToArabic is a func
+func ConvertToArabic(roman string) int {
+
+	return 0
+}
