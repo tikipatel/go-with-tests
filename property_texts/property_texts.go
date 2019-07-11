@@ -22,7 +22,7 @@ func ConvertToRoman(arabic int) string {
 	var result strings.Builder
 
 	for _, numeral := range RomanNumerals {
-		for arabic > numeral.Value {
+		for arabic >= numeral.Value {
 			result.WriteString(numeral.Symbol)
 			arabic -= numeral.Value
 		}
